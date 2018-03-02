@@ -39,7 +39,7 @@ namespace HelloWorld
         {
             var usernameLength = username.Text.Length;
             var passwordLength = password.Text.Length;
-            if (usernameLength > 10 && passwordLength > 10)
+            if (usernameLength >= 10 && passwordLength >= 10)
             {
                 btnSignIn.IsEnabled = true;
             }
@@ -53,7 +53,7 @@ namespace HelloWorld
 
         private void username_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (username.Text.Length > 9) {
+            if (username.Text.Length >= 9) {
                 EnableSignIn();
             }
         }
@@ -61,9 +61,55 @@ namespace HelloWorld
         private void password_TextChanged(object sender, TextChangedEventArgs e)
 
         {
-            if (password.Text.Length > 9)
+            if (password.Text.Length >= 9)
             {
                 EnableSignIn();
+            }
+        }
+        private void username_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (username.Text.Length < 10)
+            {
+                usernameAlert.Visibility = Visibility.Visible;
+                usernameAlert.Text = "Username must be at least 10 characters long";
+            } else
+            {
+                usernameAlert.Visibility = Visibility.Hidden;
+            }
+
+            if (username.Text.Length == 0)
+            {
+                labelUsername.Visibility = Visibility.Visible;
+            }
+
+
+        }
+
+        private void username_GotFocus(object sender, RoutedEventArgs e)
+        {
+            labelUsername.Visibility = Visibility.Hidden;
+        }
+
+        private void password_GotFocus(object sender, RoutedEventArgs e)
+        {
+            labelPassword.Visibility = Visibility.Hidden;
+        }
+
+        private void password_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (password.Text.Length < 10)
+            {
+                passwordAlert.Visibility = Visibility.Visible;
+                passwordAlert.Text = "Password must be at least 10 characters long";
+            }
+            else
+            {
+                passwordAlert.Visibility = Visibility.Hidden;
+            }
+
+            if (password.Text.Length == 0)
+            {
+                labelPassword.Visibility = Visibility.Visible;
             }
         }
     }

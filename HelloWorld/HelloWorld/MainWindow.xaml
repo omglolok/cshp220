@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="MainWindow" Height="377.778" Width="786.111">
-    <Grid Margin="10,154,2,108" Background="AntiqueWhite">
+        Title="MainWindow" Height="380.792" Width="875.532">
+    <Grid Margin="10,154,2,104" Background="AntiqueWhite">
         <Button Click="Button_Click" Background="White" Margin="-1,0,1,0">
             <StackPanel Orientation="Horizontal">
                 <Image Source="images/ic_thumb_up_black_24dp_2x.png" Height="62" Width="62" />
             </StackPanel>
         </Button>
-        <TextBox x:Name="username" HorizontalAlignment="Left" Height="23" Margin="32,-135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="698" TextChanged="username_TextChanged"/>
-        <TextBox x:Name="password" HorizontalAlignment="Left" Height="23" Margin="32,-107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="698" TextChanged="password_TextChanged"/>
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="23" Margin="32,-136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" TextChanged="username_TextChanged" LostFocus="username_LostFocus" GotFocus="username_GotFocus"/>
+        <TextBox x:Name="password" HorizontalAlignment="Left" Height="23" Margin="32,-107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" TextChanged="password_TextChanged" GotFocus="password_GotFocus" LostFocus="password_LostFocus"/>
         <Button x:Name="btnSignIn" Content="Sign In" HorizontalAlignment="Left" Margin="33,-79,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <TextBlock x:Name="usernameAlert" HorizontalAlignment="Left" Height="23" Margin="557,-135,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Visibility="Hidden" MinWidth="100" />
+        <TextBlock x:Name="passwordAlert" HorizontalAlignment="Left" Margin="558,-105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Visibility="Hidden" MinWidth="100"/>
+
+        <Label x:Name="labelUsername" Content="Username" FontStyle="Italic" HorizontalAlignment="Left" Margin="39,-138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.008" Foreground="#FF8D8D8D"/>
+        <Label x:Name="labelPassword" Content="Password" FontStyle="Italic" HorizontalAlignment="Left" Margin="39,-109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.008" Foreground="#FF8D8D8D"/>
     </Grid>
 </Window>
