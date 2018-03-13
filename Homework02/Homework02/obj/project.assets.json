@@ -674,11 +674,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\medmonds\\source\\repos\\Homework02\\Homework02\\Homework02.csproj",
+      "projectUniqueName": "C:\\Users\\medmonds\\source\\repos\\cshp220\\Homework02\\Homework02\\Homework02.csproj",
       "projectName": "Homework02",
-      "projectPath": "C:\\Users\\medmonds\\source\\repos\\Homework02\\Homework02\\Homework02.csproj",
+      "projectPath": "C:\\Users\\medmonds\\source\\repos\\cshp220\\Homework02\\Homework02\\Homework02.csproj",
       "packagesPath": "C:\\Users\\medmonds\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\medmonds\\source\\repos\\Homework02\\Homework02\\obj\\",
+      "outputPath": "C:\\Users\\medmonds\\source\\repos\\cshp220\\Homework02\\Homework02\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
