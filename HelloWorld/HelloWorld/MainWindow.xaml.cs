@@ -86,10 +86,7 @@ namespace HelloWorld
         private void password_TextChanged(object sender, TextChangedEventArgs e)
 
         {
-            if (password.Text.Length >= minLength - 1)
-            {
                 EnableSignIn();
-            }
         }
         private void password_GotFocus(object sender, RoutedEventArgs e)
         {
