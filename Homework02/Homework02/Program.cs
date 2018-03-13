@@ -1,7 +1,9 @@
-﻿using System;
+using System;
+
 using System.Linq;
 using System.Collections.Generic;
 using Homework02.Models;
+
 
 namespace Homework02
 {
