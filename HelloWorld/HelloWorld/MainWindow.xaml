@@ -43,7 +43,7 @@
                 Content="{Binding PasswordError, UpdateSourceTrigger=PropertyChanged}">
             </Label>
 
-            <Button x:Name="btnSignIn" Content="Sign In" HorizontalAlignment="Left" Margin="33,-79,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+            <Button x:Name="btnSignIn" Content="Sign In" HorizontalAlignment="Left" Margin="33,-79,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnSignIn_Click"/>
 
             <Label x:Name="labelUsername" Content="Username" FontStyle="Italic" HorizontalAlignment="Left" Margin="39,-138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.008" Foreground="#FF8D8D8D"/>
             <Label x:Name="labelPassword" Content="Password" FontStyle="Italic" HorizontalAlignment="Left" Margin="39,-109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.008" Foreground="#FF8D8D8D"/>

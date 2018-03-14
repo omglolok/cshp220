@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="SecondWindow" Height="300" Width="300">
     <Grid>
-        
+        <ListView HorizontalAlignment="Left" Height="269" VerticalAlignment="Top" Width="292">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>

@@ -48,7 +48,10 @@ namespace HelloWorld
         // Sign in button click
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            // todo
+            var window = new SecondWindow();
+            Application.Current.MainWindow = window;
+            Close();
+            window.Show();
         }
         // method to check to see whether SignIn button should be enabled
         private void EnableSignIn()
@@ -73,18 +76,14 @@ namespace HelloWorld
         }
         private void username_LostFocus(object sender, RoutedEventArgs e)
         {
-
             if (username.Text.Length == 0)
             {
                 labelUsername.Visibility = Visibility.Visible;
             }
-
-
         }
 
         // password events
         private void password_TextChanged(object sender, TextChangedEventArgs e)
-
         {
                 EnableSignIn();
         }
