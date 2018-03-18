@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="SecondWindow" Height="300" Width="300">
     <Grid>
-        
+        <ListView x:Name="uxList"
+                  ItemsSource="{Binding uxListData}"
+                  GridViewColumnHeader.Click="uxList_OnColumnClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="columnName" DisplayMemberBinding="{Binding Name}" Header="Name" >
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="columnPassword" DisplayMemberBinding="{Binding Password}" Header="Password">
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

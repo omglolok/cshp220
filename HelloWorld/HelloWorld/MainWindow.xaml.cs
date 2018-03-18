@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HelloWorld
 {
@@ -21,7 +9,7 @@ namespace HelloWorld
     public partial class MainWindow : Window
     {
         private Models.User user = new Models.User();
-        private static int minLength = 8;
+        //private static int minLength = 8;
 
         public MainWindow()
         {
@@ -48,18 +36,16 @@ namespace HelloWorld
         // Sign in button click
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            // todo
+            var window = new SecondWindow();
+            Application.Current.MainWindow = window;
+            Close();
+            window.Show();
         }
         // method to check to see whether SignIn button should be enabled
         private void EnableSignIn()
         {
-            var usernameLength = username.Text.Length;
-            var passwordLength = password.Text.Length;
-            if (usernameLength >= minLength && passwordLength >= minLength)
-            {
+
                 btnSignIn.IsEnabled = true;
-            }
-            else btnSignIn.IsEnabled = false;
         }
 
         // username events
@@ -73,18 +59,14 @@ namespace HelloWorld
         }
         private void username_LostFocus(object sender, RoutedEventArgs e)
         {
-
             if (username.Text.Length == 0)
             {
                 labelUsername.Visibility = Visibility.Visible;
             }
-
-
         }
 
         // password events
         private void password_TextChanged(object sender, TextChangedEventArgs e)
-
         {
                 EnableSignIn();
         }

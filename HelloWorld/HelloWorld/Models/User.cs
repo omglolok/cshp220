@@ -100,10 +100,6 @@ namespace HelloWorld.Models
                             {
                                 NameError = "Name cannot be longer than 12 characters.";
                             }
-                            if (Name.Length < 8 && !string.IsNullOrEmpty(Name))
-                            {
-                                NameError = "Name must be longer than 8 characters.";
-                            }
                             return NameError;
                         }
                     case "Password":
@@ -116,13 +112,9 @@ namespace HelloWorld.Models
                             {
                                 PasswordError = "Password cannot be longer than 12 characters.";
                             }
-                            if (Password.Length < 8)
-                            {
-                                PasswordError = "Password must be longer than 8 characters.";
-                            }
                             return PasswordError;
                         }
-                    default: return "";
+                    default: return NameError;
 
                 }
             }
