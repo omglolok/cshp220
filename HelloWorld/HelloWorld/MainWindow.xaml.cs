@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HelloWorld
 {
@@ -21,7 +9,7 @@ namespace HelloWorld
     public partial class MainWindow : Window
     {
         private Models.User user = new Models.User();
-        private static int minLength = 8;
+        //private static int minLength = 8;
 
         public MainWindow()
         {
@@ -56,13 +44,8 @@ namespace HelloWorld
         // method to check to see whether SignIn button should be enabled
         private void EnableSignIn()
         {
-            var usernameLength = username.Text.Length;
-            var passwordLength = password.Text.Length;
-            if (usernameLength >= minLength && passwordLength >= minLength)
-            {
+
                 btnSignIn.IsEnabled = true;
-            }
-            else btnSignIn.IsEnabled = false;
         }
 
         // username events
