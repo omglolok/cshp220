@@ -1,0 +1,50 @@
+﻿<Window x:Class="InventoryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryApp"
+        mc:Ignorable="d"
+        Title="Inventory" Height="517.877" Width="1025">
+    <StackPanel Orientation="Vertical">
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem x:Name="uxFileNew" Header="_New" Click="uxFileNew_Click" />
+                <MenuItem x:Name="uxFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded"/>
+                <MenuItem x:Name="uxFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded"/>
+            </MenuItem>
+        </Menu>
+        <ListView x:Name="uxItemList" Height="437"  SelectionChanged="uxItemList_SelectionChanged" 
+                  MouseDoubleClick="uxItemList_MouseDoubleClick"
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  >
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="uxContextFileNew" Header="_New" Click="uxFileNew_Click"/>
+                    <MenuItem x:Name="uxContextFileChange" Header="_Modify" Click="uxFileChange_Click"
+                              Loaded="uxFileChange_Loaded" />
+                    <MenuItem x:Name="uxContextFileDelete" Header="_Delete" Click="uxFileDelete_Click"
+                              Loaded="uxFileDelete_Loaded"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemName}" Width="100" >
+                        <GridViewColumnHeader Content="Name" Tag="ItemName" Click="GridViewColumnHeader_Click"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemPrice, StringFormat='{}{0:C}'}" Width="100">
+                        <GridViewColumnHeader Content="Price" Tag="ItemPrice" Click="GridViewColumnHeader_Click"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemQuantity, StringFormat='{}{0:#,#.00}'}" Width="100">
+                        <GridViewColumnHeader Content="Quantity" Tag="ItemQuantity" Click="GridViewColumnHeader_Click"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemValue, StringFormat='{}{0:C}'}" Width="100">
+                        <GridViewColumnHeader Content="Value" Tag="ItemValue" Click="GridViewColumnHeader_Click"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemDescription}"  Width="500">
+                        <GridViewColumnHeader Content="Description" Tag="ItemDescription" Click="GridViewColumnHeader_Click" Width="706" HorizontalContentAlignment="Left"/>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
